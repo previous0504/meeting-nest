@@ -7,6 +7,7 @@ import { RedisService } from 'src/redis/redis.service';
 import { HttpException } from '@nestjs/common/exceptions';
 import { HttpStatus } from '@nestjs/common/enums';
 import { md5 } from 'src/utils';
+// import { EmailService } from 'src/email/email.service';
 
 @Injectable()
 export class UserService {
@@ -14,6 +15,7 @@ export class UserService {
 
   @InjectRepository(User)
   private userRepository: Repository<User>;
+
   @Inject(RedisService)
   private redisService: RedisService;
   // 注册功能
